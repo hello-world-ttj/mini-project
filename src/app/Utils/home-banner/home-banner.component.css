@@ -1,0 +1,38 @@
+.banner{
+    height: fit-content;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover;
+    padding-top: 300px;
+    padding-bottom: 80px;
+    box-shadow: inset 0 0 180px black;
+}
+
+.description{
+    width: 600px;
+    background-color: rgba(50, 50, 50, 0.85);
+    border-radius: 20px;
+    padding: 4px 10px;
+}
+
+.title{
+    width: fit-content;
+    background-color: rgba(50, 50, 50, 0.85);
+    border-radius: 20px;
+    padding: 4px 10px;
+}
+
+
+@media screen and (max-width: 680px) {
+    .banner{
+      width: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .description{
+        width: auto;
+    }
+  }
