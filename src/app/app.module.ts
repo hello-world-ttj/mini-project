@@ -7,6 +7,7 @@ import { NavbarComponent } from './Utils/navbar/navbar.component';
 import { FooterComponent } from './Utils/footer/footer.component';
 import { HomeBannerComponent } from './Utils/home-banner/home-banner.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './Utils/card/card.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     HomeBannerComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
