@@ -7,3 +7,7 @@
     position: fixed;
     width: 100%;
 }
+
+.nav-link:focus{
+    color: #ffd900db;
+}

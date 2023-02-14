@@ -1,16 +1,12 @@
 <div
   class="container-fluid banner animate__animated animate__zoomIn animate__slow"
   style="
-    background-image: url('https://image.tmdb.org/t/p/original/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg');
+    background-image: url('{{image+trending.backdrop_path}}');
   "
 >
-  <h3 class="title animate__animated animate__jackInTheBox animate__delay-2s">Black Panther: Wakanda Forever</h3>
+  <h3 class="title animate__animated animate__jackInTheBox animate__delay-2s">{{trending.name ? trending.name : trending.title}}</h3>
   <p class="description animate__animated animate__jackInTheBox animate__delay-2s">
-    Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect
-    their nation from intervening world powers in the wake of King T’Challa’s
-    death. As the Wakandans strive to embrace their next chapter, the heroes
-    must band together with the help of War Dog Nakia and Everett Ross and forge
-    a new path for the kingdom of Wakanda.
+    {{trending.overview}}
   </p>
   <button type="button" class="btn btn-outline-danger mx-2 animate__animated animate__jackInTheBox animate__delay-2s">Play <i class="bi bi-play-circle"></i></button>
   <button type="button" class="btn btn-outline-light mx-2 animate__animated animate__jackInTheBox animate__delay-2s">More info <i class="bi bi-info-circle"></i></button>
