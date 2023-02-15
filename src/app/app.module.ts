@@ -8,6 +8,8 @@ import { FooterComponent } from './Utils/footer/footer.component';
 import { HomeBannerComponent } from './Utils/home-banner/home-banner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './Utils/card/card.component';
+import { MoreInfoComponent } from './Pages/more-info/more-info.component';
+import { BannerComponent } from './Utils/banner/banner.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { CardComponent } from './Utils/card/card.component';
     FooterComponent,
     HomeBannerComponent,
     CardComponent,
+    MoreInfoComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,4 +16,8 @@ export class CardComponent {
    this.imgUrl = this.api.imageUrl
   }
 
+  moreInfo(id: any) {
+    localStorage.setItem('id', id)
+  }
+
 }

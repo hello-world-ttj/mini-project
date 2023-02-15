@@ -1,0 +1,12 @@
+<div
+  class="container-fluid banner animate__animated animate__zoomIn"
+  style="
+    background-image: url('{{image+singleData[0].backdrop_path}}');
+  "
+>
+  <h3 class="title animate__animated animate__jackInTheBox">{{singleData[0].name ? singleData[0].name : singleData[0].title}}</h3>
+  <p class="description animate__animated animate__jackInTheBox">
+    {{singleData[0].overview}}
+  </p>
+  <button type="button" class="btn btn-outline-danger mx-2 animate__animated animate__jackInTheBox">Play <i class="bi bi-play-circle"></i></button>
+</div>

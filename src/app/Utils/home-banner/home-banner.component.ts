@@ -15,9 +15,13 @@ export class HomeBannerComponent {
     this.api.getTrending().subscribe(data => {
       this.trending = data
       this.trending = this.trending.results[0]
-      console.log(this.trending);
+      // console.log(this.trending);
       this.image = this.api.imageUrl
     })
+  }
+
+  moreInfo(id: any) {
+    localStorage.setItem('id', id)
   }
 
   
