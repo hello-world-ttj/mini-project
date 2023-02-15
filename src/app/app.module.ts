@@ -11,6 +11,9 @@ import { CardComponent } from './Utils/card/card.component';
 import { MoreInfoComponent } from './Pages/more-info/more-info.component';
 import { BannerComponent } from './Utils/banner/banner.component';
 import { SafePipe } from './safe-pipe.pipe';
+import { PageCardComponent } from './Utils/page-card/page-card.component';
+import { TvShowsComponent } from './Pages/tv-shows/tv-shows.component';
+
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { SafePipe } from './safe-pipe.pipe';
     CardComponent,
     MoreInfoComponent,
     BannerComponent,
-    SafePipe
+    SafePipe,
+    PageCardComponent,
+    TvShowsComponent
   ],
   imports: [
     BrowserModule,

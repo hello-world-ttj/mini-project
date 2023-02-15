@@ -1,0 +1,104 @@
+.card-cont{
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.card-cont::-webkit-scrollbar{
+    display: none;
+}
+
+  .box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; /*only using it to showcase the card at the center here*/
+  }
+  
+  .card {
+      width: 15rem; /*only using it for better showcase here*/
+      height: 450px;
+      max-height: 450px;
+  }
+    
+  .card-container {
+      display: -ms-grid;
+      display: grid;
+      -webkit-perspective: 700px;
+              perspective: 700px;
+  }
+    
+  .card-title p, h4, h5 {
+      text-align: center;
+      color: white;
+  }
+    
+  .card-text {
+      text-align: center;
+      color: white;
+  }
+    
+  .card-flip {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-rows: 1fr;
+      -ms-grid-columns: 1fr;
+          grid-template: 1fr / 1fr;
+          grid-template-areas: "frontAndBack";
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+  }
+    
+  .card-flip div {
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+    
+  .front {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-area: frontAndBack;
+      background-color: #3b3b3bbb !important;
+  }
+  
+  .back {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-area: frontAndBack;
+      -webkit-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+      background-color: #3b3b3bbb !important;
+      margin: 0;
+      padding: 0;
+  }
+    
+  .card-container:hover .card-flip {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+  }
+    
+  .rating {
+      text-decoration: none;
+      color: #ff9800 !important;
+  }
+  
+  .rating:hover {
+      text-decoration: none;
+      color: #ffcc80 !important;
+  }
+    
+  .movie {
+      position: fixed;
+      z-index: -1;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+  }

@@ -1,4 +1,4 @@
-<app-banner></app-banner>
+<app-banner [singleData]="single"></app-banner>
 <p class="h4 text-center m-4">Cast</p>
 <hr class="hr w-50 mx-auto"/>
 <div class="container">
@@ -13,10 +13,6 @@
         <div class="card-body">
           <h5 class="mb-4">{{cast.original_name}}</h5>
           <hr />
-          <p class="dark-grey-text mt-4">
-            Character Name
-          </p>
-          <hr class="hr w-30 mx-auto"/>
           <p class="dark-grey-text mt-4">
             {{cast.character}}
           </p>

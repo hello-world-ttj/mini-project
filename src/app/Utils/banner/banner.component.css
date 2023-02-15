@@ -17,6 +17,22 @@
     padding: 0;
 }
 
+.description{
+    width: 600px;
+    background-color: rgba(50, 50, 50, 0.85);
+    border-radius: 20px;
+    padding: 4px 10px;
+    cursor: none;
+}
+
+.title{
+    width: fit-content;
+    background-color: rgba(50, 50, 50, 0.85);
+    border-radius: 20px;
+    padding: 4px 10px;
+    cursor: none;
+}
+
 @media screen and (max-width: 680px) {
     iframe{
        width: 400px;

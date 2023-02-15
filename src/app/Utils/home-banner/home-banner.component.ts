@@ -16,15 +16,15 @@ export class HomeBannerComponent {
   ngOnInit() { 
     this.api.getTrending().subscribe(data => {
       this.trending = data
-      this.trending = this.trending.results[1]
+      this.trending = this.trending.results[0]
       // console.log(this.trending);
-      this.image = this.api.imageUrl
       this.videoArray = this.api.getVideoArray(this.trending.id)
       this.videoArray.subscribe((d:any) => {
         this.videoArray = d
-        this.video=this.videoArray.results[4].key
+        this.video=this.videoArray.results[0].key
       })      
     })
+    this.image = this.api.imageUrl
     this.vUrl=this.api.videoUrl
   }
 

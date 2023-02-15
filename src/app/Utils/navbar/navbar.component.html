@@ -12,7 +12,7 @@
             <a class="nav-link animate__animated animate__tada animate__slow" aria-current="page" routerLink="home">Home <i class="bi bi-house"></i></a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link animate__animated animate__tada animate__slow" routerLink="tv-show">TV Shows <i class="bi bi-tv"></i></a>
+            <a class="nav-link animate__animated animate__tada animate__slow" routerLink="tv-show" routerLink="tv-shows">TV Shows <i class="bi bi-tv"></i></a>
           </li>
           <li class="nav-item px-2">
             <a class="nav-link animate__animated animate__tada animate__slow" routerLink="movies">Movies <i class="bi bi-film"></i></a>
@@ -25,11 +25,8 @@
               Category <i class="bi bi-bookmarks"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li *ngFor="let g of genres"><a class="dropdown-item">{{g.name}}</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Another </a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
         </ul>

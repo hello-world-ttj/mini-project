@@ -8,17 +8,24 @@ import { ApiService } from 'src/app/api.service';
 })
 export class HomeComponent {
   trending: any
-  action:any
+  action: any
+  horror:any
   constructor(private api: ApiService) { }
   ngOnInit() { 
     this.api.getTrending().subscribe(data => {
       this.trending = data
       this.trending = this.trending.results
-      // console.log(this.trending);
     })
+
     this.api.getAction().subscribe(data => { 
       this.action = data
       this.action = this.action.results
     })
+
+    this.api.getHorror().subscribe(data => { 
+      this.horror = data
+      this.horror = this.horror.results
+    })
+
   }
 }

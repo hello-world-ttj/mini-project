@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  genres:any
+  constructor(private api: ApiService) { }
+  
+  ngOnInit() { 
+    this.api.getGenres().subscribe(genre => {
+      this.genres = genre
+      this.genres = this.genres.genres
+    })
+  }
 }

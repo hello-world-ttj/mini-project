@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,20 +16,32 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   
-  getTrending() {
+  getTrending():Observable<any>  {
     return this.http.get("https://api.themoviedb.org/3/trending/all/day?api_key=" + this.apiKey)
   }
 
-  getVideoArray(id: any){
+  getVideoArray(id: any):Observable<any> {
     return this.http.get(this.videoPath+id+this.videoHalfPath)
   }
 
-  getAction() {
+  getAction():Observable<any>  {
     return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres=28")
   }
 
-  getCredit(id:any) {
+  getHorror():Observable<any>  {
+    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres=27")
+  }
+
+  getCredit(id:any):Observable<any>  {
     return this.http.get(this.videoPath+id+"/credits?api_key="+this.apiKey+"&language=en-US")
+  }
+
+  getGenres() {
+    return this.http.get("https://api.themoviedb.org/3/genre/movie/list?api_key="+this.apiKey+"&language=en-US")
+  }
+
+  getTVShows() {
+    return this.http.get("https://api.themoviedb.org/3/discover/tv?api_key="+this.apiKey+"&language=en-US")
   }
 
 }

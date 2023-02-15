@@ -8,12 +8,12 @@ import { ApiService } from 'src/app/api.service';
 })
 export class BannerComponent {
   sData: any
-  singleData: any
   image: any
   video: any
   videoArray: any
-  vUrl:any
-  @Input() data: any = ''
+  vUrl: any
+  @Input() singleData:any = ''
+
   constructor(private api: ApiService) { }
 
   ngOnInit() { 
@@ -23,7 +23,6 @@ export class BannerComponent {
       this.sData = d
       this.sData = this.sData.results
       // console.log(this.sData);
-      this.singleData = this.sData.filter((res: any) => res.id === id)
       // console.log(this.singleData);
       this.videoArray = this.api.getVideoArray(id)
       this.videoArray.subscribe((d:any) => {
