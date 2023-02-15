@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './Utils/card/card.component';
 import { MoreInfoComponent } from './Pages/more-info/more-info.component';
 import { BannerComponent } from './Utils/banner/banner.component';
+import { SafePipe } from './safe-pipe.pipe';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { BannerComponent } from './Utils/banner/banner.component';
     CardComponent,
     MoreInfoComponent,
     BannerComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

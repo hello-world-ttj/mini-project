@@ -7,3 +7,19 @@
     padding-bottom: 80px;
     box-shadow: inset 0 0 180px black;
 }
+.modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.modal-body{
+    position: relative;
+    padding: 0;
+}
+
+@media screen and (max-width: 680px) {
+    iframe{
+       width: 400px;
+       height: 300px;
+    }
+  }

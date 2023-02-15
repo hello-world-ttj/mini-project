@@ -7,17 +7,18 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-
-  imgUrl:any
+  imgUrl: any
   @Input() datas: any = ''
   constructor(private api: ApiService) { }
 
   ngOnInit() { 
-   this.imgUrl = this.api.imageUrl
+    this.imgUrl = this.api.imageUrl        
   }
 
   moreInfo(id: any) {
     localStorage.setItem('id', id)
   }
+
+
 
 }

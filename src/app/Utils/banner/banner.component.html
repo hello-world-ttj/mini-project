@@ -8,5 +8,19 @@
   <p class="description animate__animated animate__jackInTheBox">
     {{singleData[0].overview}}
   </p>
-  <button type="button" class="btn btn-outline-danger mx-2 animate__animated animate__jackInTheBox">Play <i class="bi bi-play-circle"></i></button>
+  <button type="button" class="btn btn-outline-danger mx-2 animate__animated animate__jackInTheBox" data-bs-toggle="modal" data-bs-target="#myModal">Play <i class="bi bi-play-circle"></i></button>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="798" height="500" [src]="vUrl+video | safeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>

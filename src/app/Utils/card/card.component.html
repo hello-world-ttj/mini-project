@@ -18,9 +18,7 @@
         <div class="card-block text-center">
         <p class="card-text">{{data.overview}}</p>
           <h4 class="card-title">Rating</h4>
-			<p class="card-text"><a href="#" class="rating">{{data.vote_average}}/10</a></p>
-            <button type="button" class="btn btn-outline-danger m-2">Play <i class="bi bi-play-circle"></i></button>
-            
+			<p class="card-text"><a href="#" class="rating">{{data.vote_average}}/10</a></p>            
             <button type="button" class="btn btn-outline-light m-2" routerLink="/more-info" (click)="moreInfo(data.id)">More info <i class="bi bi-info-circle"></i></button>
         </div>
       </div>
@@ -30,5 +28,4 @@
 <!-- End Card -->
 
       </div>
-  </div>
-
+</div>

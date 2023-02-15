@@ -24,6 +24,18 @@
     cursor: none;
 }
 
+.modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.modal-body{
+    position: relative;
+    padding: 0;
+}
+
+
+
 @media screen and (max-width: 680px) {
     .banner{
       width: auto;
@@ -35,5 +47,10 @@
     }
     .description{
         width: auto;
+    }
+
+    iframe{
+       width: 400px;
+       height: 300px;
     }
   }
