@@ -12,7 +12,8 @@ import { MoreInfoComponent } from './Pages/more-info/more-info.component';
 import { BannerComponent } from './Utils/banner/banner.component';
 import { SafePipe } from './safe-pipe.pipe';
 import { PageCardComponent } from './Utils/page-card/page-card.component';
-import { TvShowsComponent } from './Pages/tv-shows/tv-shows.component';
+import { TvShowComponent } from './Pages/tv-show/tv-show.component';
+import { MoviesComponent } from './Pages/movies/movies.component';
 
 
 
@@ -28,7 +29,8 @@ import { TvShowsComponent } from './Pages/tv-shows/tv-shows.component';
     BannerComponent,
     SafePipe,
     PageCardComponent,
-    TvShowsComponent
+    TvShowComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

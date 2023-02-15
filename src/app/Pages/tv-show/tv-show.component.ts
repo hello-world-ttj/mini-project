@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
-  selector: 'app-tv-shows',
-  templateUrl: './tv-shows.component.html',
-  styleUrls: ['./tv-shows.component.css']
+  selector: 'app-tv-show',
+  templateUrl: './tv-show.component.html',
+  styleUrls: ['./tv-show.component.css']
 })
-export class TvShowsComponent {
+export class TvShowComponent {
   tvshow: any
   constructor(private api: ApiService) { }
   ngOnInit() { 

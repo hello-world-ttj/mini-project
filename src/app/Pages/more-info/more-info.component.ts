@@ -44,6 +44,12 @@ export class MoreInfoComponent {
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
     }) 
+
+    this.sData = this.api.getMovies().subscribe(data => {
+      this.sData = data
+      this.sData = this.sData.results
+      this.single = this.sData.filter((res: any) => res.id === id)
+    }) 
     
     this.api.getCredit(id).subscribe(credit => {
       this.casts = credit    

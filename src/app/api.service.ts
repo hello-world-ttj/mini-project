@@ -44,4 +44,8 @@ export class ApiService {
     return this.http.get("https://api.themoviedb.org/3/discover/tv?api_key="+this.apiKey+"&language=en-US")
   }
 
+  getMovies() {
+    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key="+this.apiKey+"&language=en-US&page=3")
+  }
+
 }
