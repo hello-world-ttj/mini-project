@@ -11,7 +11,11 @@ export class ApiService {
   videoUrl: any = "https://www.youtube.com/embed/"
   videoPath: any = "https://api.themoviedb.org/3/movie/"
   videoHalfPath: any = "/videos?api_key=" + this.apiKey + "&language=en-US"
+
+
   constructor(private http: HttpClient) { }
+
+  
   getTrending() {
     return this.http.get("https://api.themoviedb.org/3/trending/all/day?api_key=" + this.apiKey)
   }
@@ -19,4 +23,13 @@ export class ApiService {
   getVideoArray(id: any){
     return this.http.get(this.videoPath+id+this.videoHalfPath)
   }
+
+  getAction() {
+    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres=28")
+  }
+
+  getCredit(id:any) {
+    return this.http.get(this.videoPath+id+"/credits?api_key="+this.apiKey+"&language=en-US")
+  }
+
 }

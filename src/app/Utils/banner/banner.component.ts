@@ -29,8 +29,6 @@ export class BannerComponent {
       this.videoArray.subscribe((d:any) => {
         this.videoArray = d
         this.video = this.videoArray.results[1].key
-        console.log(this.video);
-        
       }) 
     })
     this.image = this.api.imageUrl
