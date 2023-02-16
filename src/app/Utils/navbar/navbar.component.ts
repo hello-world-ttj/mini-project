@@ -16,4 +16,7 @@ export class NavbarComponent {
       this.genres = this.genres.genres
     })
   }
+  getCat(id: any) {
+    localStorage.setItem('cat', id)
+  }
 }

@@ -14,6 +14,9 @@ import { SafePipe } from './safe-pipe.pipe';
 import { PageCardComponent } from './Utils/page-card/page-card.component';
 import { TvShowComponent } from './Pages/tv-show/tv-show.component';
 import { MoviesComponent } from './Pages/movies/movies.component';
+import { CategoryComponent } from './Pages/category/category.component';
+import { CarouselComponent } from './Utils/carousel/carousel.component';
+
 
 
 
@@ -30,7 +33,9 @@ import { MoviesComponent } from './Pages/movies/movies.component';
     SafePipe,
     PageCardComponent,
     TvShowComponent,
-    MoviesComponent
+    MoviesComponent,
+    CategoryComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

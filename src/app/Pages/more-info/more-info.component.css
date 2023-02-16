@@ -45,3 +45,20 @@
            height: 300px;
         }
       }
+    
+    .roww{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .roww::-webkit-scrollbar{
+        display: none;
+    }
+
+    .user-content p{
+        margin-top:5px;
+        font-size:12px;
+    }

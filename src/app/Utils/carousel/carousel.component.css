@@ -1,0 +1,10 @@
+.catImg{
+    height: 600px;
+    width: auto;
+}
+
+@media screen and (max-width: 680px) {
+    .catImg{
+        height: 300px;
+    }
+  }

@@ -17,7 +17,6 @@ export class HomeBannerComponent {
     this.api.getTrending().subscribe(data => {
       this.trending = data
       this.trending = this.trending.results[0]
-      // console.log(this.trending);
       this.videoArray = this.api.getVideoArray(this.trending.id)
       this.videoArray.subscribe((d:any) => {
         this.videoArray = d
@@ -25,7 +24,8 @@ export class HomeBannerComponent {
       })      
     })
     this.image = this.api.imageUrl
-    this.vUrl=this.api.videoUrl
+    this.vUrl = this.api.videoUrl
+    
   }
 
   moreInfo(id: any) {

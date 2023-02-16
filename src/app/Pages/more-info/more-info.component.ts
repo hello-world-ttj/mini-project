@@ -9,9 +9,10 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./more-info.component.css']
 })
 export class MoreInfoComponent {
-  casts: any
+  casts: any = false
+  crew:any
   img: any
-  vArray: any
+  vArray: any = false
   vUrl: any
   sData: any
   single: any
@@ -19,6 +20,7 @@ export class MoreInfoComponent {
 
   ngOnInit() { 
     let pageId = localStorage.getItem('id')
+    let catId = localStorage.getItem('cat')
     let id = Number(pageId)
 
     this.sData = this.api.getTrending().subscribe(data => {
@@ -50,16 +52,25 @@ export class MoreInfoComponent {
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
     }) 
+
+    this.sData = this.api.getCategory(catId).subscribe(data => {
+      this.sData = data
+      this.sData = this.sData.results
+      this.single = this.sData.filter((res: any) => res.id === id)
+    }) 
     
     this.api.getCredit(id).subscribe(credit => {
       this.casts = credit    
       this.casts = this.casts.cast    
+      this.crew = credit
+      this.crew = this.crew.crew
+      console.log(this.crew);
+      
     })
     
     this.api.getVideoArray(id).subscribe(v => {
       this.vArray = v
       this.vArray = this.vArray.results
-      console.log(this.vArray);
       
     })
     this.vUrl=this.api.videoUrl

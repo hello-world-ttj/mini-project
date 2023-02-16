@@ -9,20 +9,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-4">
           <li class="nav-item px-2">
-            <a class="nav-link animate__animated animate__tada animate__slow" aria-current="page" routerLink="home">Home <i class="bi bi-house"></i></a>
+            <a class="nav-link animate__animated animate__tada animate__slow" aria-current="page" routerLink="home" routerLinkActive="activelink">Home <i class="bi bi-house"></i></a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link animate__animated animate__tada animate__slow" routerLink="tv-show" routerLink="tv-shows">TV Shows <i class="bi bi-tv"></i></a>
+            <a class="nav-link animate__animated animate__tada animate__slow" routerLink="tv-show" routerLink="tv-shows" routerLinkActive="activelink">TV Shows <i class="bi bi-tv"></i></a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link animate__animated animate__tada animate__slow" routerLink="movies" routerLink="movies">Movies <i class="bi bi-film"></i></a>
+            <a class="nav-link animate__animated animate__tada animate__slow" routerLink="movies" routerLink="movies" routerLinkActive="activelink">Movies <i class="bi bi-film"></i></a>
           </li>
           <li class="nav-item dropdown px-2">
             <a class="nav-link animate__animated animate__tada animate__slow dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Category <i class="bi bi-bookmarks"></i>
             </a>
             <ul class="dropdown-menu">
-              <li *ngFor="let g of genres"><a class="dropdown-item">{{g.name}}</a></li>
+              <li *ngFor="let g of genres"><a class="dropdown-item" (click)="getCat(g.id)" routerLink="category/{{g.id}}" routerLinkActive="activelink">{{g.name}}</a></li>
               <li><hr class="dropdown-divider"></li>
             </ul>
           </li>

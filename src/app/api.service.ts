@@ -36,16 +36,20 @@ export class ApiService {
     return this.http.get(this.videoPath+id+"/credits?api_key="+this.apiKey+"&language=en-US")
   }
 
-  getGenres() {
+  getGenres():Observable<any> {
     return this.http.get("https://api.themoviedb.org/3/genre/movie/list?api_key="+this.apiKey+"&language=en-US")
   }
 
-  getTVShows() {
+  getTVShows():Observable<any> {
     return this.http.get("https://api.themoviedb.org/3/discover/tv?api_key="+this.apiKey+"&language=en-US")
   }
 
-  getMovies() {
+  getMovies():Observable<any> {
     return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key="+this.apiKey+"&language=en-US&page=3")
+  }
+
+  getCategory(id:any):Observable<any> { 
+    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres="+id+"&page=2")
   }
 
 }
