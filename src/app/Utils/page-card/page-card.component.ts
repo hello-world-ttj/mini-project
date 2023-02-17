@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./page-card.component.css']
 })
 export class PageCardComponent {
-
+  searchText=''
   imgUrl: any
   @Input() category: any = ''
   constructor(private api: ApiService,private router:Router) { }

@@ -8,12 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
+  searchText = ''
   imgUrl: any
   @Input() datas: any = ''
   constructor(private api: ApiService,private router:Router) { }
 
   ngOnInit() { 
-    this.imgUrl = this.api.imageUrl     
+    this.imgUrl = this.api.imageUrl
   }
 
   moreInfo(id: any) {

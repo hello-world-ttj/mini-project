@@ -16,7 +16,8 @@ import { TvShowComponent } from './Pages/tv-show/tv-show.component';
 import { MoviesComponent } from './Pages/movies/movies.component';
 import { CategoryComponent } from './Pages/category/category.component';
 import { CarouselComponent } from './Utils/carousel/carousel.component';
-
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -35,10 +36,12 @@ import { CarouselComponent } from './Utils/carousel/carousel.component';
     TvShowComponent,
     MoviesComponent,
     CategoryComponent,
-    CarouselComponent
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
+    Ng2SearchPipeModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
