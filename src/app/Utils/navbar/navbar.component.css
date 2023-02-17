@@ -5,6 +5,7 @@
 .navbar{
     z-index: 5;
     width: 100%;
+    position: fixed;
 }
 
 .activelink{

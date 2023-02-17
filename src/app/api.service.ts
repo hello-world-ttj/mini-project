@@ -24,14 +24,6 @@ export class ApiService {
     return this.http.get(this.videoPath+id+this.videoHalfPath)
   }
 
-  getAction():Observable<any>  {
-    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres=28")
-  }
-
-  getHorror():Observable<any>  {
-    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres=27")
-  }
-
   getCredit(id:any):Observable<any>  {
     return this.http.get(this.videoPath+id+"/credits?api_key="+this.apiKey+"&language=en-US")
   }

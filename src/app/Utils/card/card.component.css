@@ -15,12 +15,12 @@
     align-items: center;
     flex-direction: column;
     justify-content: center; /*only using it to showcase the card at the center here*/
+
   }
   
   .card {
       width: 15rem; /*only using it for better showcase here*/
-      height: 450px;
-      max-height: 450px;
+      align-self: normal;
   }
     
   .card-container {
@@ -65,6 +65,7 @@
       -ms-grid-column: 1;
       grid-area: frontAndBack;
       background-color: #3b3b3bbb !important;
+      height: 450px;
   }
   
   .back {
@@ -74,8 +75,6 @@
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
       background-color: #3b3b3bbb !important;
-      margin: 0;
-      padding: 0;
   }
     
   .card-container:hover .card-flip {
