@@ -52,8 +52,8 @@
 <hr class="hr w-50 mx-auto" *ngIf="vArray != false"/>
 
 <div class="container text-center">
-    <div class="row justify-content-evenly">
-      <div class="col-6" *ngFor="let v of vArray">
+    <div class="row justify-content-evenly iframeRow">
+      <div class="col-lg-6" *ngFor="let v of vArray">
         <iframe class="animate__animated animate__rollIn animate__slower" width="650" height="450" [src]="vUrl+v.key | safeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     </div>
