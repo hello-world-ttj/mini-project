@@ -15,6 +15,10 @@ export class CardComponent {
 
   ngOnInit() { 
     this.imgUrl = this.api.imageUrl
+    this.api.search.subscribe(sData => {
+      // console.log(sData);
+      this.searchText = sData
+    })
   }
 
   moreInfo(id: any) {

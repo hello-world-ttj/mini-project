@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class ApiService {
   videoUrl: any = "https://www.youtube.com/embed/"
   videoPath: any = "https://api.themoviedb.org/3/movie/"
   videoHalfPath: any = "/videos?api_key=" + this.apiKey + "&language=en-US"
+
+  search = new BehaviorSubject<any>("")
 
 
   constructor(private http: HttpClient) { }

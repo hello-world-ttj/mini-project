@@ -14,7 +14,10 @@ export class PageCardComponent {
   constructor(private api: ApiService,private router:Router) { }
 
   ngOnInit() { 
-    this.imgUrl = this.api.imageUrl     
+    this.imgUrl = this.api.imageUrl    
+    this.api.search.subscribe(sData => {
+      this.searchText=sData
+    })
   }
 
 

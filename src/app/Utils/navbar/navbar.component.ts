@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  searchKey = ''
   genres:any
   constructor(private api: ApiService) { }
   
@@ -16,6 +17,14 @@ export class NavbarComponent {
       this.genres = this.genres.genres
     })
   }
+
+  search(e: any) {
+    this.searchKey = (e.target as HTMLInputElement).value
+    // console.log(this.searchKey);
+    this.api.search.next(this.searchKey)
+    
+  }
+
   getCat(id: any) {
     localStorage.setItem('cat', id)
   }
