@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/api.service';
 export class CategoryComponent {
 
   cat: any
+  loading: boolean = true
   constructor(private api: ApiService) { }
 
   ngOnInit() {
@@ -16,6 +17,7 @@ export class CategoryComponent {
     this.api.getCategory(catId).subscribe(category => {
       this.cat = category
       this.cat = this.cat.results
+      this.cat ? this.loading = false : this.loading = true
     })
   }
 }

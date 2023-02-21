@@ -1,3 +1,10 @@
+<div id="page-loading" *ngIf="loading">
+    <div class="three-balls">
+      <div class="ball ball1"></div>
+      <div class="ball ball2"></div>
+      <div class="ball ball3"></div>
+    </div>
+</div>
 <app-home-banner></app-home-banner>
 <p class="h4 ms-4 mt-2 mb-0">Trending Now🔥</p>
 <app-card [datas]="trending"></app-card>

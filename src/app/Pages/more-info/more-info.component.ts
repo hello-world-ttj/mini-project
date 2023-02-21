@@ -35,7 +35,7 @@ export class MoreInfoComponent {
   thrillerId: any = 53
   warId: any = 10752
   westernId: any = 37
-  
+  loading : boolean = true
   constructor(private api:ApiService){}
 
   ngOnInit() { 
@@ -47,138 +47,161 @@ export class MoreInfoComponent {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     })    
 
     this.sData = this.api.getCategory(this.actionId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     })  
 
     this.sData = this.api.getCategory(this.adventureId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.animationId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.comedyId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.crimeId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.documentaryId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.dramaId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.familyId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.fantasyId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.historyId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.horrorId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.musicId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.mysteryId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.romanceId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.scienceFictionId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.tVMovieId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.thrillerId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.warId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(this.westernId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getTVShows().subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getMovies().subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
 
     this.sData = this.api.getCategory(catId).subscribe(data => {
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)
+      this.single ? this.loading = false : this.loading = true
     }) 
     
     this.api.getCredit(id).subscribe(credit => {
@@ -187,13 +210,13 @@ export class MoreInfoComponent {
       this.crew = credit
       this.crew = this.crew.crew
       console.log(this.crew);
-      
+      this.crew ? this.loading = false : this.loading = true
     })
     
     this.api.getVideoArray(id).subscribe(v => {
       this.vArray = v
       this.vArray = this.vArray.results
-      
+      this.vArray ? this.loading = false : this.loading = true
     })
     this.vUrl=this.api.videoUrl
     this.img = this.api.imageUrl
