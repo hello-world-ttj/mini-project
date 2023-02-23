@@ -60,37 +60,28 @@
   }
     
   .front {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
       grid-area: frontAndBack;
       background-color: #3b3b3bbb !important;
   }
   
   .back {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
       grid-area: frontAndBack;
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
       background-color: #3b3b3bbb !important;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   }
     
   .card-container:hover .card-flip {
       -webkit-transform: rotateY(180deg);
               transform: rotateY(180deg);
   }
-    
-  .rating {
-      text-decoration: none;
-      color: #ff9800 !important;
-  }
-  
-  .rating:hover {
-      text-decoration: none;
-      color: #ffcc80 !important;
-  }
+
     
   .movie {
       position: fixed;
@@ -101,4 +92,19 @@
       width: 100%;
       height: auto;
       bottom: 0;
+  }
+
+  .star{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .rating-star{
+    font-size: 1.5rem;
+  }
+  
+  .full-star:before {
+    color: #f2b01e;
+    content: "\2605";
   }

@@ -25,4 +25,10 @@ export class PageCardComponent {
     localStorage.setItem('id', id)
     this.router.navigate(['/more-info'])
   }
+
+  range(end: number): number[] {
+    let start = 1
+    const length = end - start + 1;
+    return Array.from({ length }, (_, i) => start + i);
+  }
 }

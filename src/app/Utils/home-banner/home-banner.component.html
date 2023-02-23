@@ -4,12 +4,12 @@
     background-image: url('{{image+trending.backdrop_path}}');
   "
 >
-  <h3 class="title animate__animated animate__jackInTheBox animate__delay-2s">{{trending.name ? trending.name : trending.title}}</h3>
-  <p class="description animate__animated animate__jackInTheBox animate__delay-2s">
+  <h3 class="title animate__animated animate__jackInTheBox animate__slow">{{trending.name ? trending.name : trending.title}}</h3>
+  <p class="description animate__animated animate__jackInTheBox animate__slow">
     {{trending.overview}}
   </p>
-  <button type="button" class="btn btn-outline-danger m-2 animate__animated animate__jackInTheBox animate__delay-2s" data-bs-toggle="modal" data-bs-target="#myModal">Play <i class="bi bi-play-circle"></i></button>
-  <button type="button" class="btn btn-outline-light mx-2 animate__animated animate__jackInTheBox animate__delay-2s" routerLink="/more-info" (click)="moreInfo(trending.id)">More info <i class="bi bi-info-circle"></i></button>
+  <button type="button" class="btn btn-outline-danger m-2 animate__animated animate__jackInTheBox animate__slow" data-bs-toggle="modal" data-bs-target="#myModal">Play <i class="bi bi-play-circle"></i></button>
+  <button type="button" class="btn btn-outline-light mx-2 animate__animated animate__jackInTheBox animate__slow" routerLink="/more-info" (click)="moreInfo(trending.id)">More info <i class="bi bi-info-circle"></i></button>
 </div>
             
   <!-- Modal -->

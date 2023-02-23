@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class MoreInfoComponent {
   casts: any = false
-  crew:any
+  crew:any = false
   img: any
   vArray: any = false
   vUrl: any
@@ -219,7 +219,6 @@ export class MoreInfoComponent {
       this.vArray ? this.loading = false : this.loading = true
     })
     this.vUrl=this.api.videoUrl
-    this.img = this.api.imageUrl
   }
 
 
