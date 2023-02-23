@@ -8,11 +8,13 @@ import { ApiService } from 'src/app/api.service';
 })
 export class MoviesComponent {
   movie: any
+  loading: boolean = true
   constructor(private api: ApiService) { }
   ngOnInit() { 
     this.api.getMovies().subscribe(tv => {
       this.movie = tv
       this.movie = this.movie.results
+      this.movie ? this.loading = false : this.loading = true
     })
   }
 }

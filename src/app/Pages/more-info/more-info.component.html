@@ -1,10 +1,4 @@
-<div id="page-loading" *ngIf="loading">
-  <div class="three-balls">
-    <div class="ball ball1"></div>
-    <div class="ball ball2"></div>
-    <div class="ball ball3"></div>
-  </div>
-</div>
+<app-loading *ngIf="loading"></app-loading>
 <app-banner [singleData]="single"></app-banner>
 <p class="h4 text-center m-4 animate__animated animate__jackInTheBox" *ngIf="casts != false">Cast</p>
 <hr class="hr w-50 mx-auto animate__animated animate__jackInTheBox" *ngIf="casts != false"/>

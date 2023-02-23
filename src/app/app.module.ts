@@ -18,6 +18,7 @@ import { CategoryComponent } from './Pages/category/category.component';
 import { CarouselComponent } from './Utils/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoadingComponent } from './Utils/loading/loading.component';
 
 
 
@@ -37,6 +38,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MoviesComponent,
     CategoryComponent,
     CarouselComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
