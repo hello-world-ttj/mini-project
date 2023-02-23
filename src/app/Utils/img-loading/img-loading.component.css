@@ -1,0 +1,17 @@
+.loader{
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: #ff0000;
+}

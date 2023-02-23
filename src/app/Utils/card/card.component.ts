@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class CardComponent {
   searchText = ''
   imgUrl: any
+  imageLoaded = false
   @Input() datas: any = ''
   constructor(private api: ApiService,private router:Router) { }
 

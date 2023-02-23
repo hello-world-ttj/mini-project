@@ -209,9 +209,11 @@ export class HomeComponent {
       if (this.western) {
         this.count++
       }  
-      if (this.count >= 20) {
+      if (this.count > 4) {
         this.loading=false
       }
+      console.log(this.count);
+      
     })   
   
   }
