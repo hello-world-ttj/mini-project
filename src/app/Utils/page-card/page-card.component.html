@@ -1,30 +1,18 @@
-<div class="container-fluid card-cont">
-    <div *ngFor="let data of category | filter:searchText">
-      <!-- Card -->
-<div class="card-container box mx-2">
-  <div class="card-flip">
-  <!-- Card Front -->
-  <div class="card front my-4 animate__animated animate__rollIn animate__slow">
-    <img src="{{imgUrl+data.poster_path}}" class="card-img-top img-fluid" alt="movie-poster">
-    <div class="star">
-      <div class="card-block py-2" *ngFor="let i of range(data.vote_average/2)">
-        <span class="rating-star full-star"></span>
-      </div>
-  </div>
-  </div>
-  <!-- End Card Front -->
+<div class="container">
+  <div class="row">
+      <div class="col-sm-6 col-lg-3 p-4 d-flex align-items-stretch animate__animated animate__rollIn animate__slow" *ngFor="let data of category | filter:searchText" >
+          <div class="card-sl">
+              <div class="card-image">
+                  <img class="card-img-top" src="{{imgUrl+data.poster_path}}" />
+              </div>
 
-  <!-- Card Back -->
-  <div class="card back">
-    <div class="card-block text-center back-title">
-      <h5 class="card-title">{{data.name ? data.name : data.title}}</h5>         
-          <button type="button" class="btn btn-outline-light m-2" routerLink="more-info" (click)="moreInfo(data.id)">More info <i class="bi bi-info-circle"></i></button>
+              <a class="card-action" href="#"><i class="bi bi-heart"></i></a>
+              <div class="star">
+                <div class="py-2" *ngFor="let i of range(data.vote_average/2)">
+                  <span class="rating-star full-star"></span>
+                </div>
+              </div>
+              <a routerLink="more-info" (click)="moreInfo(data.id)" class="card-button">More info <i class="bi bi-info-circle"></i></a>
+          </div>
       </div>
-    </div>
-    <!-- End Card Back -->
-  </div>
-</div>
-<!-- End Card -->
-
-    </div>
-</div>
+  </div>  
