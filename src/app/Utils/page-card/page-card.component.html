@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-      <div class="col-sm-6 col-lg-3 p-4 d-flex align-items-stretch animate__animated animate__rollIn animate__slow" *ngFor="let data of category | filter:searchText" >
+  <div class="row flexcard p-4">
+      <div class="d-flex align-items-stretch animate__animated animate__rollIn animate__slow" *ngFor="let data of category | filter:searchText" >
           <div class="card-sl">
               <div class="card-image">
                   <img class="card-img-top" src="{{imgUrl+data.poster_path}}" />
@@ -8,7 +8,7 @@
 
               <a class="card-action" href="#"><i class="bi bi-heart"></i></a>
               <div class="star">
-                <div class="py-2" *ngFor="let i of range(data.vote_average/2)">
+                <div class="py-2" *ngFor="let i of range(data.vote_average ? data.vote_average/2 : 3)">
                   <span class="rating-star full-star"></span>
                 </div>
               </div>

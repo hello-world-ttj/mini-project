@@ -1,0 +1,25 @@
+<div class="space"></div>
+<div class="main animate__animated animate__zoomIn animate__slow">  	
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" placeholder="Full Name" [(ngModel)]="Name" name="name">
+                <input type="email" placeholder="Email" [(ngModel)]="emailUp" name="emailUp">
+                <input type="password" placeholder="Password" [(ngModel)]="passwordUp" name="passwordUp">
+                <input type="password" placeholder="Confirm Password" [(ngModel)]="cpasswordUp" name="cpasswordUp">
+                <button (click)="signUp()">Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Sign in</label>
+                <input type="email" placeholder="Email" [(ngModel)]="emailIn" name="emailIn">
+                <input type="password" placeholder="Password" [(ngModel)]="passwordIn" name="passwordIn">
+                <button (click)="signIn()">Login</button>
+            </form>
+        </div>
+</div>
+<div class="space"></div>

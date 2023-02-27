@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,8 @@ import { ApiService } from 'src/app/api.service';
 })
 export class NavbarComponent {
   searchKey = ''
-  genres:any
-  constructor(private api: ApiService) { }
+  genres: any
+  constructor(private api: ApiService,private auth: AuthService) { }
   
   ngOnInit() { 
     this.api.getGenres().subscribe(genre => {
@@ -27,5 +28,9 @@ export class NavbarComponent {
 
   getCat(id: any) {
     localStorage.setItem('cat', id)
+  }
+
+  signOut() {
+    this.auth.signOut()
   }
 }

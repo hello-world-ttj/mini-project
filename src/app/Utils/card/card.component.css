@@ -3,9 +3,42 @@ a {
     }
 
     /* Card Styles */
+.flexcard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.flexcard::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.flexcard::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.flexcard::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(255, 74, 74)),
+									   color-stop(0.72, rgb(255, 59, 59)),
+									   color-stop(0.86, rgb(255, 0, 0)));
+}
 
 
-
+.row>*{
+    flex-shrink: unset;
+}
     .card-sl {
         border-radius: 8px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;

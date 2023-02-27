@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "m-d:build:production",
+            "firebaseProject": "mini-project-52c02",
+            "firebaseHostingSite": "mini-project-52c02"
+          }
         }
       }
     }

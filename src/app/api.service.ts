@@ -15,12 +15,15 @@ export class ApiService {
 
   search = new BehaviorSubject<any>("")
 
-
   constructor(private http: HttpClient) { }
 
   
   getTrending():Observable<any>  {
     return this.http.get("https://api.themoviedb.org/3/trending/all/day?api_key=" + this.apiKey)
+  }
+
+  getTrendingWithPage(page: number):Observable<any>  {
+    return this.http.get("https://api.themoviedb.org/3/trending/all/day?api_key=" + this.apiKey+"&page="+page)
   }
 
   getVideoArray(id: any):Observable<any> {

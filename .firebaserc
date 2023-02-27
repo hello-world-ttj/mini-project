@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mini-project-52c02": {
+      "hosting": {
+        "m-d": [
+          "mini-project-52c02"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mini-project-52c02"
+  }
+}

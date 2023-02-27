@@ -20,9 +20,12 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoadingComponent } from './Utils/loading/loading.component';
 import { ImgLoadingComponent } from './Utils/img-loading/img-loading.component';
-
-
-
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { SignInUpComponent } from './Pages/sign-in-up/sign-in-up.component';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,15 +44,21 @@ import { ImgLoadingComponent } from './Utils/img-loading/img-loading.component';
     CarouselComponent,
     LoadingComponent,
     ImgLoadingComponent,
+    SignInUpComponent
   ],
   imports: [
     BrowserModule,
     Ng2SearchPipeModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

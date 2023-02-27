@@ -17,6 +17,7 @@ export class HomeComponent {
       this.trending = this.trending.results
       this.trending ? this.loading = false : this.loading = true
     }) 
-  
+
   }
+  
 }

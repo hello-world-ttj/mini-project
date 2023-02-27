@@ -4,16 +4,18 @@ import { CategoryComponent } from './Pages/category/category.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { MoreInfoComponent } from './Pages/more-info/more-info.component';
 import { MoviesComponent } from './Pages/movies/movies.component';
+import { SignInUpComponent } from './Pages/sign-in-up/sign-in-up.component';
 import { TvShowComponent } from './Pages/tv-show/tv-show.component';
 
 
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", redirectTo:"signIn/signUp", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "more-info", component: MoreInfoComponent },
   { path: "tv-shows", component: TvShowComponent },
   { path: "movies", component: MoviesComponent },
+  { path: "signIn/signUp", component: SignInUpComponent },
   { path: "category/28", component: CategoryComponent },
   { path: "category/12", component: CategoryComponent },
   { path: "category/16", component: CategoryComponent },
