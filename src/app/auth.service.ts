@@ -52,14 +52,16 @@ export class AuthService {
       })
       this.router.navigate(['/home']);
     }, err => {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Something went wrong ' + err,
-        background: "#212529",
-        showConfirmButton: false,
-        timer: 2000
-      }) 
+      if (err.code === 'auth/wrong-password') {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Wrong Password Please Try Again',
+          background: "#212529",
+          showConfirmButton: false,
+          timer: 2000
+        }) 
+      }
       this.router.navigate(['/signIn/signUp']);
     })
   }
