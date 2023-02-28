@@ -6,7 +6,7 @@
                   <img class="card-img-top" src="{{imgUrl+data.poster_path}}" />
               </div>
 
-              <a class="card-action" href="#"><i class="bi bi-heart"></i></a>
+              <a [ngClass]="favIcon ? 'card-action-active' : 'card-action'" (click)="addToFav(data)"><i class="bi bi-heart"></i></a>
               <div class="star">
                 <div class="py-2" *ngFor="let i of range(data.vote_average ? data.vote_average/2 : 3)">
                   <span class="rating-star full-star"></span>

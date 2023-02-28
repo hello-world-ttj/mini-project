@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "category/80", component: CategoryComponent },
   { path: "category/99", component: CategoryComponent },
   { path: "category/18", component: CategoryComponent },
-  { path: "category/10752", component: CategoryComponent },
+  { path: "category/10751", component: CategoryComponent },
   { path: "category/14", component: CategoryComponent },
   { path: "category/36", component: CategoryComponent },
   { path: "category/27", component: CategoryComponent },

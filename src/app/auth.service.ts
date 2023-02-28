@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Firestore} from '@angular/fire/firestore';
-import { setDoc, doc, getDoc} from "firebase/firestore";
+import { setDoc, doc, getDoc, } from "firebase/firestore";
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 
@@ -122,6 +122,31 @@ export class AuthService {
   } catch(error) {
       console.log(error)
   }
+ }
+  
+  addFav(userId: any, data: any) {
+    const docRef = doc(this.firestore, "favorite", userId)
+    const favData = {
+      favData: {
+        data
+      }
+    }
+      setDoc(docRef, favData).then(() => {
+        Swal.fire({
+          title: 'Added to Favorite',
+          background: "#212529",
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+      }).catch((err) => { 
+        console.log(err);
+      })
+      
+    
   }
 
 }

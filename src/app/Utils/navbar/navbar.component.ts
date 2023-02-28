@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/auth.service';
 export class NavbarComponent {
   searchKey = ''
   genres: any
-  userName: string = " "
+  userName: string = ""
   constructor(private api: ApiService, public auth: AngularFireAuth, private fireService: AuthService) { 
     this.getUser()
   }
