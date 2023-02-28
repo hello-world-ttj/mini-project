@@ -1,3 +1,5 @@
-<app-loading *ngIf="loading"></app-loading>
-<app-carousel [category]="cat"></app-carousel>
-<app-card [datas]="cat"></app-card>
+<ng-container *ngIf="auth.user | async as user">
+  <app-loading *ngIf="loading"></app-loading>
+  <app-carousel [category]="cat"></app-carousel>
+  <app-card [datas]="cat"></app-card>
+</ng-container>

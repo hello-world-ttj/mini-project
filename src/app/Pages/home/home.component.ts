@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
 export class HomeComponent {
   trending: any
   loading: boolean = true
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public auth: AngularFireAuth) { }
 
   ngOnInit() { 
     this.api.getTrending().subscribe(data => {

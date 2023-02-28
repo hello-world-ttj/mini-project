@@ -9,11 +9,23 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  constructor(private fireauth: Auth, private firestore: Firestore, private router: Router) { }
+  constructor(private fireauth: Auth,private firestore: Firestore , private router: Router) { }
 
   //signUp method
   signUp(email: string, password: string, name: string) {
     createUserWithEmailAndPassword(this.fireauth, email, password).then((res) => { 
+      const uid = res.user.uid
+      const user = {
+        uid: uid,
+        name: name
+      }
+      const userCollection = collection(this.firestore, 'users')
+      addDoc(userCollection, user).then((res) => { 
+        // console.log(res)
+      }).catch((err) => { 
+        // console.log(err);
+      })
+      localStorage.setItem('token', 'true')
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -92,5 +104,7 @@ export class AuthService {
       this.router.navigate(['/signIn/signUp']);
     })
   }
-  
+
+  //getUser method
+
 }

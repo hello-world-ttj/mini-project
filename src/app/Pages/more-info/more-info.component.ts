@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ApiService } from 'src/app/api.service';
 
 
@@ -35,8 +36,9 @@ export class MoreInfoComponent {
   thrillerId: any = 53
   warId: any = 10752
   westernId: any = 37
-  loading : boolean = true
-  constructor(private api:ApiService){}
+  loading: boolean = true
+  
+  constructor(private api:ApiService, public auth: AngularFireAuth){}
 
   ngOnInit() { 
     let pageId = localStorage.getItem('id')
