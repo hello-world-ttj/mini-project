@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from 'src/app/auth.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { AuthService } from 'src/app/auth.service';
 export class NavbarComponent {
   searchKey = ''
   genres: any
-  constructor(private api: ApiService,private auth: AuthService) { }
+  userName: string = " "
+  constructor(private api: ApiService, public auth: AngularFireAuth, private fireService: AuthService) { 
+    this.getUser()
+  }
   
   ngOnInit() { 
     this.api.getGenres().subscribe(genre => {
@@ -32,5 +36,14 @@ export class NavbarComponent {
 
   signOut() {
     this.auth.signOut()
+  }
+
+    getUser() {
+    this.auth.user.subscribe(data => { 
+      let userId = data?.uid
+      this.fireService.getUserById(userId).then(data => { 
+        this.userName = data.name
+      })
+    })
   }
 }

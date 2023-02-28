@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ApiService } from 'src/app/api.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,6 +9,7 @@ import { ApiService } from 'src/app/api.service';
 export class HomeComponent {
   trending: any
   loading: boolean = true
+  userMail: any
   constructor(private api: ApiService, public auth: AngularFireAuth) { }
 
   ngOnInit() { 
@@ -18,7 +18,8 @@ export class HomeComponent {
       this.trending = this.trending.results
       this.trending ? this.loading = false : this.loading = true
     }) 
-
   }
+
+
   
 }

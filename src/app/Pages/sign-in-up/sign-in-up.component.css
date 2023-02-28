@@ -1,6 +1,6 @@
 .main{
 	width: 350px;
-	height: 500px;
+	height: 540px;
 	overflow: hidden;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
@@ -36,6 +36,12 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
+
+.file{
+	width: 60%;
+	height: 45px;
+}
+
 button{
 	width: 60%;
 	height: 40px;

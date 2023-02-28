@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
+import { Firestore} from '@angular/fire/firestore';
+import { setDoc, doc, getDoc} from "firebase/firestore";
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 
@@ -11,6 +12,7 @@ export class AuthService {
 
   constructor(private fireauth: Auth,private firestore: Firestore , private router: Router) { }
 
+
   //signUp method
   signUp(email: string, password: string, name: string) {
     createUserWithEmailAndPassword(this.fireauth, email, password).then((res) => { 
@@ -19,12 +21,14 @@ export class AuthService {
         uid: uid,
         name: name
       }
-      const userCollection = collection(this.firestore, 'users')
-      addDoc(userCollection, user).then((res) => { 
-        // console.log(res)
+
+      const docRef = doc(this.firestore, "users", uid)
+      setDoc(docRef, user).then(() => {
+        console.log("Data added successfully");
       }).catch((err) => { 
-        // console.log(err);
+        console.log(err);
       })
+
       localStorage.setItem('token', 'true')
       Swal.fire({
         position: 'center',
@@ -105,6 +109,19 @@ export class AuthService {
     })
   }
 
-  //getUser method
+  //getUserById method
+ async getUserById(id:any):Promise<any> {
+    const docRef = doc(this.firestore, "users", id)
+    try {
+      const docSnap = await getDoc(docRef);
+      if(docSnap.exists()) {
+        return docSnap.data()
+    } else {
+        console.log("Document does not exist")
+    }
+  } catch(error) {
+      console.log(error)
+  }
+  }
 
 }
