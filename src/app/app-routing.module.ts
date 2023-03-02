@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './Pages/category/category.component';
+import { FavoriteComponent } from './Pages/favorite/favorite.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { MoreInfoComponent } from './Pages/more-info/more-info.component';
 import { MoviesComponent } from './Pages/movies/movies.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: "category/52", component: CategoryComponent },
   { path: "category/53", component: CategoryComponent },
   { path: "category/37", component: CategoryComponent },
+  { path: "favorites", component: FavoriteComponent }
 
 ];
 

@@ -13,12 +13,10 @@ export class CardComponent {
   searchText = ''
   imgUrl: any
   imageLoaded = false
-  favIcon: boolean = false
   @Input() datas: any = ''
   constructor(private api: ApiService, private router: Router, private auth: AngularFireAuth, private fireService: AuthService) { }
 
   ngOnInit() { 
-    this.getFav()
     this.imgUrl = this.api.imageUrl
     this.api.search.subscribe(sData => {
       // console.log(sData);
@@ -40,22 +38,8 @@ export class CardComponent {
   addToFav(data: any) {
     this.auth.user.subscribe(user => { 
       let userId = user?.uid
-      let added = this.fireService.addFav(userId, data)
-      added.subscribe((data: any) => {
-        alert(data)
-      })
+      this.fireService.addFav(userId, data)
     })
   }
-
-  getFav() {
-    this.auth.user.subscribe(user => {
-      let userId = user?.uid
-      this.fireService.getFav(userId).subscribe(datas => {
-        console.log(datas);
-      })
-    })
-  }
-
-
 
 }

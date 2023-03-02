@@ -11,3 +11,11 @@
 .activelink{
     color: #ffd900db;
 }
+
+.in{
+    width: 300px;
+}
+
+.in:focus{
+    border-color: red;
+}

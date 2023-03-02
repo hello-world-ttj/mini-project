@@ -44,11 +44,11 @@ export class MoreInfoComponent {
     let pageId = localStorage.getItem('id')
     let catId = localStorage.getItem('cat')
     let id = Number(pageId)
+    this.auth.user.subscribe(user => {
+      this.user=user
+    })
 
     this.sData = this.api.getTrending().subscribe(data => {
-      this.auth.user.subscribe(user => {
-        this.user=user
-      })
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)

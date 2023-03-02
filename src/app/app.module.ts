@@ -28,6 +28,7 @@ import { SignInUpComponent } from './Pages/sign-in-up/sign-in-up.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ErrorComponent } from './Utils/error/error.component';
+import { FavoriteComponent } from './Pages/favorite/favorite.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { ErrorComponent } from './Utils/error/error.component';
     LoadingComponent,
     ImgLoadingComponent,
     SignInUpComponent,
-    ErrorComponent
+    ErrorComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

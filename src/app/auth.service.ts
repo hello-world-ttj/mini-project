@@ -138,7 +138,7 @@ export class AuthService {
     data.userId = userId;
     return this.favCollection.add(data).then(() => {
         Swal.fire({
-          title: 'Added to Favorite',
+          title: 'Added to Favorites',
           background: "#212529",
           icon: 'success',
           showConfirmButton: false,
@@ -170,4 +170,33 @@ export class AuthService {
       )
   }
 
-}
+  //removeFav method
+  removeFav(itemId: any) {
+    this.favCollection.ref.where('id', '==', itemId).get().then((querySnapshot:any) => {
+      querySnapshot.forEach((doc:any) => {
+        doc.ref.delete().then(() => {
+          Swal.fire({
+            title: 'Removed from Favorites',
+            background: "#212529",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000,
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+        }).catch((err:any) => { 
+          console.log(err);
+        })
+      })
+    })
+  }
+
+
+
+  }
+
+

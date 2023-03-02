@@ -1,0 +1,16 @@
+<div class="space"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 cards" *ngFor="let favItem of favItems">
+        <div class="card bg-dark text-white">
+            <img src="{{image+favItem.backdrop_path}}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">{{favItem.title}}</h5>
+              <p class="card-text">{{favItem.overview}}</p>
+              <a class="card-action-active" (click)="removeFav(favItem.id)"><i class="bi bi-heart"></i></a>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<div class="space"></div>
