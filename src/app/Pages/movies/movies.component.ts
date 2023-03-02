@@ -10,8 +10,12 @@ import { ApiService } from 'src/app/api.service';
 export class MoviesComponent {
   movie: any
   loading: boolean = true
+  user:any
   constructor(private api: ApiService, public auth: AngularFireAuth) { }
   ngOnInit() { 
+    this.auth.user.subscribe(user => {
+      this.user=user
+    })
     this.api.getMovies().subscribe(tv => {
       this.movie = tv
       this.movie = this.movie.results

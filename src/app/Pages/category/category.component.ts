@@ -11,9 +11,13 @@ export class CategoryComponent {
 
   cat: any
   loading: boolean = true
+  user:any
   constructor(private api: ApiService,public auth: AngularFireAuth) { }
 
   ngOnInit() {
+    this.auth.user.subscribe(user => {
+      this.user=user
+    })
     let catId = localStorage.getItem('cat')
     this.api.getCategory(catId).subscribe(category => {
       this.cat = category

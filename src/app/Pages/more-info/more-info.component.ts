@@ -37,7 +37,7 @@ export class MoreInfoComponent {
   warId: any = 10752
   westernId: any = 37
   loading: boolean = true
-  
+  user:any
   constructor(private api:ApiService, public auth: AngularFireAuth){}
 
   ngOnInit() { 
@@ -46,6 +46,9 @@ export class MoreInfoComponent {
     let id = Number(pageId)
 
     this.sData = this.api.getTrending().subscribe(data => {
+      this.auth.user.subscribe(user => {
+        this.user=user
+      })
       this.sData = data
       this.sData = this.sData.results
       this.single = this.sData.filter((res: any) => res.id === id)

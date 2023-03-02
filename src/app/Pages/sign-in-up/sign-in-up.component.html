@@ -1,5 +1,6 @@
 <div class="space"></div>
-<div class="main animate__animated animate__zoomIn animate__slow">  	
+<app-error  *ngIf="user"></app-error>
+<div class="main animate__animated animate__zoomIn animate__slow" *ngIf="!user">  	
     <input type="checkbox" id="chk" aria-hidden="true">
 
         <div class="signup">

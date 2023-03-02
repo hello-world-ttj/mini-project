@@ -10,8 +10,12 @@ import { ApiService } from 'src/app/api.service';
 export class TvShowComponent {
   tvshow: any
   loading: boolean = true
+  user:any
   constructor(private api: ApiService, public auth: AngularFireAuth) { }
   ngOnInit() { 
+    this.auth.user.subscribe(user => {
+      this.user=user
+    })
     this.api.getTVShows().subscribe(tv => {
       this.tvshow = tv
       this.tvshow = this.tvshow.results

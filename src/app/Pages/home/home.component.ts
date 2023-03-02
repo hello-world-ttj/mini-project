@@ -10,9 +10,13 @@ export class HomeComponent {
   trending: any
   loading: boolean = true
   userMail: any
+  user:any
   constructor(private api: ApiService, public auth: AngularFireAuth) { }
 
   ngOnInit() { 
+    this.auth.user.subscribe(user => {
+      this.user=user
+    })
     this.api.getTrending().subscribe(data => {
       this.trending = data
       this.trending = this.trending.results

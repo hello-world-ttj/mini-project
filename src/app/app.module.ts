@@ -27,6 +27,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { SignInUpComponent } from './Pages/sign-in-up/sign-in-up.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ErrorComponent } from './Utils/error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     CarouselComponent,
     LoadingComponent,
     ImgLoadingComponent,
-    SignInUpComponent
+    SignInUpComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
