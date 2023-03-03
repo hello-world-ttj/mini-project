@@ -1,3 +1,5 @@
+<app-error  *ngIf="!user"></app-error>
+<ng-container *ngIf="user">
 <app-loading *ngIf="loading"></app-loading>
 <div class="space"></div>
 <div class="container">
@@ -15,3 +17,4 @@
   </div>
 </div>
 <div class="space"></div>
+</ng-container>
