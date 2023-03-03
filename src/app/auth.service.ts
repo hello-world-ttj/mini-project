@@ -6,7 +6,7 @@ import { setDoc, doc, getDoc, } from "firebase/firestore";
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 
 
 @Injectable({
@@ -134,8 +134,7 @@ export class AuthService {
   
   //addFavorite method
   addFav(userId: any, data: any) {
-    data.userId = userId;
-    // this.favExists(data.id)
+    data.userId = userId;    
     return this.favCollection.add(data).then(() => {
         Swal.fire({
           title: 'Added to Favorites',
@@ -196,13 +195,6 @@ export class AuthService {
   }
 
   //favExists method
-  favExists(itemId: any) {
-    this.favCollection.ref.where('id', '==', itemId).get().then((querySnapshot: any) => {
-      querySnapshot.forEach((doc: any) => {
-        console.log(doc);      
-      })
-    })
-  }
 
 
   }
