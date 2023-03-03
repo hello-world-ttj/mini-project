@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-
   private favCollection: AngularFirestoreCollection<any> | any;
 
   constructor(private fireauth: Auth, private firestore: Firestore, private router: Router, private db: AngularFirestore) {
@@ -136,6 +135,7 @@ export class AuthService {
   //addFavorite method
   addFav(userId: any, data: any) {
     data.userId = userId;
+    // this.favExists(data.id)
     return this.favCollection.add(data).then(() => {
         Swal.fire({
           title: 'Added to Favorites',
@@ -195,6 +195,14 @@ export class AuthService {
     })
   }
 
+  //favExists method
+  favExists(itemId: any) {
+    this.favCollection.ref.where('id', '==', itemId).get().then((querySnapshot: any) => {
+      querySnapshot.forEach((doc: any) => {
+        console.log(doc);      
+      })
+    })
+  }
 
 
   }
