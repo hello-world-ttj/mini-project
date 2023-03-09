@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './Pages/category/category.component';
 import { FavoriteComponent } from './Pages/favorite/favorite.component';
 import { HomeComponent } from './Pages/home/home.component';
+import { LivesearchComponent } from './Pages/livesearch/livesearch.component';
 import { MoreInfoComponent } from './Pages/more-info/more-info.component';
 import { MoviesComponent } from './Pages/movies/movies.component';
 import { SignInUpComponent } from './Pages/sign-in-up/sign-in-up.component';
@@ -36,7 +37,9 @@ const routes: Routes = [
   { path: "category/52", component: CategoryComponent },
   { path: "category/53", component: CategoryComponent },
   { path: "category/37", component: CategoryComponent },
-  { path: "favorites", component: FavoriteComponent }
+  { path: "favorites", component: FavoriteComponent },
+  { path: "livesearch", component: LivesearchComponent }
+
 
 ];
 

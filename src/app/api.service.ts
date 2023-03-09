@@ -50,4 +50,8 @@ export class ApiService {
     return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.apiKey+"&with_genres="+id+"&page=2")
   }
 
+  getSearch(query:any) {
+    return this.http.get("https://api.themoviedb.org/3/search/movie?api_key="+this.apiKey+"&language=en-US&query="+query+"&page=1&include_adult=false")
+  }
+
 }

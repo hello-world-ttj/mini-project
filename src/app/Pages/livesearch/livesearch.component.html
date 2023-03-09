@@ -1,0 +1,36 @@
+<app-error  *ngIf="!user"></app-error>
+<div class="space"></div>
+<div class="container">  
+          <form action="">
+            <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="bi bi-search"></i></button>
+                </div>
+                <input [(ngModel)]="searchKey" (search)="search($event)" name="search" type="search" placeholder="Search Movie..." aria-describedby="button-addon2" class="form-control border-0 bg-light">
+              </div>
+            </div>
+          </form>
+</div>
+
+<ng-container *ngIf="user">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 cards" *ngFor="let sData of searchData">
+        <div class="card bg-dark text-white">
+            <img src="{{sData.backdrop_path ? imgUrl+sData.backdrop_path : imgUrl+'/gslT8t964rYXyqRcqrxFh77ikyb.jpg'}}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">{{sData.title}}</h5>
+              <p class="card-text">{{sData.overview}}</p>
+              <a class="card-action-active" (click)="addToFav(sData)"><i class="bi bi-heart"></i></a>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+</ng-container>
+
+
+
+
+<div class="space"></div>

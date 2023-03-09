@@ -29,6 +29,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ErrorComponent } from './Utils/error/error.component';
 import { FavoriteComponent } from './Pages/favorite/favorite.component';
+import { LivesearchComponent } from './Pages/livesearch/livesearch.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { FavoriteComponent } from './Pages/favorite/favorite.component';
     ImgLoadingComponent,
     SignInUpComponent,
     ErrorComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    LivesearchComponent
   ],
   imports: [
     BrowserModule,
