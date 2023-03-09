@@ -1,6 +1,6 @@
 <app-error  *ngIf="!user"></app-error>
 <div class="space"></div>
-<div class="container">  
+<div class="container" *ngIf="user">  
           <form action="">
             <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4">
               <div class="input-group">
