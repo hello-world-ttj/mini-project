@@ -30,6 +30,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ErrorComponent } from './Utils/error/error.component';
 import { FavoriteComponent } from './Pages/favorite/favorite.component';
 import { LivesearchComponent } from './Pages/livesearch/livesearch.component';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { LivesearchComponent } from './Pages/livesearch/livesearch.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    provideDatabase(() => getDatabase()),
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }

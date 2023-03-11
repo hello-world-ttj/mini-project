@@ -59,3 +59,6 @@ button {
     display: flex;
     justify-content: center;
 }
+.space{
+  padding-top: 70px;
+}

@@ -135,6 +135,25 @@ export class AuthService {
   //addFavorite method
   addFav(userId: any, data: any) {
     data.userId = userId;    
+
+    const query = this.db.collection('favorite').ref.where('id', '==', data.id).where('userId', '==', data.userId)
+    query.get().then((querySnapshot) => { 
+      if (!querySnapshot.empty) {
+        Swal.fire({
+          title: 'Already added to Favorites',
+          background: "#212529",
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 2000,
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+      }
+      else {
     return this.favCollection.add(data).then(() => {
         Swal.fire({
           title: 'Added to Favorites',
@@ -151,7 +170,9 @@ export class AuthService {
         })
       }).catch((err:any) => { 
         console.log(err);
-      })  
+      }) 
+      }
+    }) 
   }
 
   //getFavorite method

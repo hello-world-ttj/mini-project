@@ -15,8 +15,11 @@ export class HomeComponent {
 
   ngOnInit() { 
     this.auth.user.subscribe(user => {
-      this.user=user
+      this.user = user
+      // console.log(this.user.uid);
+      
     })
+    
     this.api.getTrending().subscribe(data => {
       this.trending = data
       this.trending = this.trending.results

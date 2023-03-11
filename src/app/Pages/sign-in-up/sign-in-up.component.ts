@@ -24,6 +24,8 @@ export class SignInUpComponent {
     this.authu.user.subscribe(user => {
       this.user=user
     })
+    console.log(this.user);
+    
   }
 
   signUp() {
