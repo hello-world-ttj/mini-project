@@ -31,6 +31,7 @@ import { ErrorComponent } from './Utils/error/error.component';
 import { FavoriteComponent } from './Pages/favorite/favorite.component';
 import { LivesearchComponent } from './Pages/livesearch/livesearch.component';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { CommunityComponent } from './Pages/community/community.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     SignInUpComponent,
     ErrorComponent,
     FavoriteComponent,
-    LivesearchComponent
+    LivesearchComponent,
+    CommunityComponent
   ],
   imports: [
     BrowserModule,

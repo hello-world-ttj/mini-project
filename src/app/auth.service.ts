@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { Firestore } from '@angular/fire/firestore';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { setDoc, doc, getDoc, } from "firebase/firestore";
+import { Firestore, setDoc, doc, getDoc, collection,addDoc,collectionData,serverTimestamp } from "@angular/fire/firestore";
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, retry } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -215,8 +214,22 @@ export class AuthService {
     })
   }
 
-  //favExists method
+  //community add method
+  addToCommunity(data: any) {
+    const timestamp = serverTimestamp()
+    data.timestamp = timestamp
+    const communityCollection = collection(this.firestore, 'community')
+    addDoc(communityCollection, data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 
+  //community add method
+  getCommunity() { 
+    return this.db.collection('community', ref => ref.orderBy('timestamp', 'asc')).valueChanges()
+  }
 
   }
 

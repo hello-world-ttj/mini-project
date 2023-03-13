@@ -1,6 +1,5 @@
-<app-error  *ngIf="!user"></app-error>
 <div class="space"></div>
-<div class="container" *ngIf="user">  
+<div class="container">  
           <form action="">
             <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4">
               <div class="input-group">
@@ -13,7 +12,7 @@
           </form>
 </div>
 
-<ng-container *ngIf="user">
+<ng-container>
 <div class="container">
   <div class="row">
     <div class="col-lg-6 cards" *ngFor="let sData of searchData">

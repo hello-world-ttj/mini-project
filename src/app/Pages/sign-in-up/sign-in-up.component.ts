@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -17,16 +16,9 @@ export class SignInUpComponent {
   emailUp: string = ""
   passwordUp: string = ""
   cpasswordUp: string = ""
-  user: any 
-  constructor(private auth : AuthService,public authu: AngularFireAuth) { }
+  constructor(private auth : AuthService) { }
   
-  ngOnInit() { 
-    this.authu.user.subscribe(user => {
-      this.user=user
-    })
-    console.log(this.user);
-    
-  }
+  ngOnInit() { }
 
   signUp() {
     if (this.Name == "") {

@@ -14,16 +14,10 @@ export class LivesearchComponent {
   searchData: any = ''
   imgUrl:any
   loading: boolean = true
-  user: any
   
   constructor(private auth: AngularFireAuth, private fireService: AuthService, private api: ApiService) { }
 
-  ngOnInit() { 
-    this.imgUrl = this.api.imageUrl
-    this.auth.user.subscribe(user => {
-      this.user = user
-    })
-  }
+  ngOnInit() {  }
 
   search(e: any) {
     this.searchKey = (e.target as HTMLInputElement).value

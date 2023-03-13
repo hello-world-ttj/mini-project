@@ -1,0 +1,32 @@
+<div class="space"></div>
+<div class="container-fluid h-100">
+  <div class="card-body msg_card_body">
+    <div  class="container-fluid" *ngFor="let msg of messageData">
+    <div class="d-flex justify-content-start mb-4">
+      <div class="msg_cotainer" *ngIf="userId!==msg.userId">
+        {{msg.message}}
+        <span class="msg_time">{{msg.userName}}</span>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mb-4">
+      <div class="msg_cotainer_send" *ngIf="userId===msg.userId">
+        {{msg.message}}
+        <span class="msg_time_send">{{msg.userName}}</span>
+      </div>
+    </div>
+      </div>
+    <div class="card-footer">
+      <div class="input-group">
+        <textarea
+          name="message"
+          [(ngModel)]="message"
+          class="form-control type_msg"
+          placeholder="Type your message..."
+        ></textarea>
+          <span class="input-group-text send_btn"
+          (click)="addCommData()"
+          ><i class="bi bi-send" ></i></span>
+      </div>
+    </div>
+  </div>
+</div>

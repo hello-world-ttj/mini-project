@@ -13,15 +13,12 @@ export class FavoriteComponent {
   favItems: any
   image: any
   loading: boolean = true
-  user:any
   constructor(private auth: AngularFireAuth, private fireService: AuthService, private api: ApiService) { }
 
   ngOnInit() {
-    this.auth.user.subscribe(user => {
-      this.user=user
-    })
     this.getFav()
     this.image = this.api.imageUrl
+    console.log(this.favItems);
   }
 
   getFav() {

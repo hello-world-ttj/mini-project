@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ApiService } from 'src/app/api.service';
 
 
@@ -37,16 +36,12 @@ export class MoreInfoComponent {
   warId: any = 10752
   westernId: any = 37
   loading: boolean = true
-  user:any
-  constructor(private api:ApiService, public auth: AngularFireAuth){}
-
+  constructor(private api: ApiService) { }
+  
   ngOnInit() { 
     let pageId = localStorage.getItem('id')
     let catId = localStorage.getItem('cat')
     let id = Number(pageId)
-    this.auth.user.subscribe(user => {
-      this.user=user
-    })
 
     this.sData = this.api.getTrending().subscribe(data => {
       this.sData = data

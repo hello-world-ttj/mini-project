@@ -1,5 +1,4 @@
-<app-error  *ngIf="!user"></app-error>
-<ng-container *ngIf="user">
+<ng-container>
   <app-loading *ngIf="loading"></app-loading>
   <app-carousel [category]="cat"></app-carousel>
   <app-card [datas]="cat"></app-card>
