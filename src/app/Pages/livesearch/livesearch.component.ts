@@ -26,8 +26,8 @@ export class LivesearchComponent {
       this.searchData = data
       this.searchData = this.searchData.results
       console.log(this.searchData);
-      
     })
+    this.imgUrl = this.api.imageUrl
   }
 
   addToFav(data: any) {
