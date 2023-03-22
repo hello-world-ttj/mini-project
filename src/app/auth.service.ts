@@ -56,7 +56,16 @@ export class AuthService {
           showConfirmButton: false,
           timer: 2000
         })
-      }     
+      } else if(err.code === "auth/invalid-email") {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Invalid email address...',
+        background: "#212529",
+          showConfirmButton: false,
+          timer: 2000
+        })
+      } 
       this.router.navigate(['/signIn/signUp']);
     })
   }
