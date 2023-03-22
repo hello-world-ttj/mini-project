@@ -85,6 +85,16 @@ export class AuthService {
           timer: 2000
         }) 
       }
+      else if(err.code === 'auth/user-not-found'){
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'No user found with this email address',
+          background: "#212529",
+          showConfirmButton: false,
+          timer: 2000
+        }) 
+      }
       this.router.navigate(['/signIn/signUp']);
     })
   }
